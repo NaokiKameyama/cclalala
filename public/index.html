@@ -3,35 +3,53 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/index.css">
     <title>cslalala</title>
-  </head>
-  <body>
-    <p>
-      定額決済ページ(テスト版)
-    </p>
     <!-- Load Stripe.js on your website. -->
     <script src="https://js.stripe.com/v3"></script>
+  </head>
+  <body>
+    <div  class="top-message">
+      Stripeの決済画面に移ります。
+    </div>
 
-    <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
-    <button
-      style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em;cursor:pointer;"
-      id="checkout-button-price_1IkWMCALNRT3liRl05BhmdB7"
-      role="link"
-      type="button"
-    >
-      ビジネス会員プラン 月額330円
-    </button>
-    <br /><br />
-    <button
-      style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em;cursor:pointer;"
-      id="checkout-button-price_1IkWLBALNRT3liRlo6jRDehD"
-      role="link"
-      type="button"
-    >
-      ビジネスプロプラン 月額550円
-    </button>
+    <div class="payment-button-container">
+      <button
+        style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em;cursor:pointer;"
+        id="checkout-button-price_1IkWMCALNRT3liRl05BhmdB7"
+        role="link"
+        type="button"
+      >
+        ビジネス会員プラン 月額330円
+      </button>
+      <br /><br />
+      <button
+        style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em;cursor:pointer;"
+        id="checkout-button-price_1IkWLBALNRT3liRlo6jRDehD"
+        role="link"
+        type="button"
+      >
+        ビジネスプロプラン 月額550円
+      </button>
+      <div id="error-message"></div>
+    </div>
 
-    <div id="error-message"></div>
+    <div class="payment-discription">
+      決済は、毎月/自動引き落としとなります。<br />
+      JCB/Visa/Masterがご利用いただけます。
+    </div>
+
+    <div class="inquiry-discription">
+      決済後、各講師会員証画面に移りますので、ご確認くださいませ。万一、表示反映されていない場合は、恐れ入りますが、
+      <a href="https://cc-lalala.jp/inquiry/">協会事務局</a>までご連絡くださいませ。<br />
+      その他、不明な点などございましたら、<a href="https://cc-lalala.jp/lower/qanda.php">よくある質問欄</a>をご覧くださいませ。
+    </div>
+
+    <div class="attention-discription">
+      <u>決済後の返金は行っておりません</u>ので、あらかじめご了承くださいませ。
+      ビジネス登録を解約はいつでも行なえます。その場合、<u>サービス内容は、
+      初期化され引き継がれませんので、ご注意くださいませ。</u>
+    </div>
 
     <script>
     (function() {
@@ -53,7 +71,7 @@
           * Instead use one of the strategies described in
           * https://stripe.com/docs/payments/checkout/fulfill-orders
           */
-          successUrl: 'https://www.cc-lalala.jp',
+          successUrl: 'https://cc-lalala.jp/account/?m=member_card_B',
           cancelUrl: 'https://cclalala-4d98e.web.app/',
         })
         .then(function (result) {
@@ -85,7 +103,7 @@
           * Instead use one of the strategies described in
           * https://stripe.com/docs/payments/checkout/fulfill-orders
           */
-          successUrl: 'https://www.cc-lalala.jp',
+          successUrl: 'https://cc-lalala.jp/account/?m=member_card_B',
           cancelUrl: 'https://cclalala-4d98e.web.app/',
         })
         .then(function (result) {

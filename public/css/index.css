@@ -1,0 +1,56 @@
+body { 
+  width:600px;
+  height:750px;
+  margin-right: auto;
+  margin-left : auto;
+  margin-top: 20px;
+}
+@media screen and (max-width: 959px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
+}
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+  body { 
+    width:80%;
+  }
+}
+
+.top-message {
+  width: 100%;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 25px;
+}
+
+.payment-button-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.payment-discription {
+  text-align: center;
+  margin-bottom: 80px;
+}
+@media screen and (max-width: 959px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
+}
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+  .payment-discription {
+    text-align: left;
+    margin-bottom: 30px;
+  }
+}
+
+.inquiry-discription {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.attention-discription {
+  border: solid 1.5px red;
+  color: red;
+  padding: 8px;
+  text-align: left;
+  margin-bottom: 30px;
+}
