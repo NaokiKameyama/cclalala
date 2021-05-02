@@ -10,13 +10,13 @@
   </head>
   <body>
     <div  class="top-message">
-      Stripeの決済画面に移ります。
+      Stripeの決済画面に移ります。(税込み10%)
     </div>
 
     <div class="payment-button-container">
       <button
         style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em;cursor:pointer;"
-        id="checkout-button-price_1IkWMCALNRT3liRl05BhmdB7"
+        id="checkout-button-price_1IksZlALNRT3liRlaK0gvInn"
         role="link"
         type="button"
       >
@@ -25,7 +25,7 @@
       <br /><br />
       <button
         style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em;cursor:pointer;"
-        id="checkout-button-price_1IkWLBALNRT3liRlo6jRDehD"
+        id="checkout-button-price_1IksZsALNRT3liRl4cto5JFQ"
         role="link"
         type="button"
       >
@@ -53,16 +53,16 @@
 
     <script>
     (function() {
-      var stripe = Stripe('pk_test_51Ijdt6ALNRT3liRlnHOjnxZT1or2DbUFZCAs1BpqNqvCwYzIdqHzVrtFnDM3bN8SOUHBTV1xxbLo8M1WVn91XMw000uLKFbrZc');
+      var stripe = Stripe('pk_live_51Ijdt6ALNRT3liRlcW8rQLGbi7J1M1TtQjuByETAcJBubwlbfBCqcx4TrEmk5YB73ZEYzYZRn0EguhsGoFJGDVdF00iAe7v6Os');
 
-      var checkoutButton = document.getElementById('checkout-button-price_1IkWMCALNRT3liRl05BhmdB7');
+      var checkoutButton = document.getElementById('checkout-button-price_1IksZlALNRT3liRlaK0gvInn');
       checkoutButton.addEventListener('click', function () {
         /*
         * When the customer clicks on the button, redirect
         * them to Checkout.
         */
         stripe.redirectToCheckout({
-          lineItems: [{price: 'price_1IkWMCALNRT3liRl05BhmdB7', quantity: 1}],
+          lineItems: [{price: 'price_1IksZlALNRT3liRlaK0gvInn', quantity: 1}],
           mode: 'subscription',
           /*
           * Do not rely on the redirect to the successUrl for fulfilling
@@ -87,14 +87,14 @@
       });
 
 
-      var checkoutButton = document.getElementById('checkout-button-price_1IkWLBALNRT3liRlo6jRDehD');
+      var checkoutButton = document.getElementById('checkout-button-price_1IksZsALNRT3liRl4cto5JFQ');
       checkoutButton.addEventListener('click', function () {
         /*
         * When the customer clicks on the button, redirect
         * them to Checkout.
         */
         stripe.redirectToCheckout({
-          lineItems: [{price: 'price_1IkWLBALNRT3liRlo6jRDehD', quantity: 1}],
+          lineItems: [{price: 'price_1IksZsALNRT3liRl4cto5JFQ', quantity: 1}],
           mode: 'subscription',
           /*
           * Do not rely on the redirect to the successUrl for fulfilling
