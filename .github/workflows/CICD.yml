@@ -1,0 +1,16 @@
+name: CICD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@main
+        - name: Firebase Deploy
+          run: |
+            sudo npm install -g firebase-tools 
+            firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
